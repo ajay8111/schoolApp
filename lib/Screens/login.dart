@@ -4,6 +4,7 @@ import 'package:login_flutter/Screens/dash.dart';
 import 'package:login_flutter/Screens/forgotpw.dart';
 import 'package:login_flutter/Screens/homepage.dart';
 import 'package:login_flutter/Screens/signup.dart';
+import 'package:lottie/lottie.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -47,14 +48,14 @@ class _LoginPageState extends State<LoginPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Column(
-                          children: const [
-                            Icon(
-                              Icons.lock,
-                              size: 80,
-                              color: Colors.blueAccent,
+                          children: [
+                            Lottie.asset(
+                              'assets/login.json',
+                              width: 150,
+                              height: 150,
                             ),
-                            SizedBox(height: 16),
-                            Text(
+                            const SizedBox(height: 16),
+                            const Text(
                               'Welcome Back!',
                               style: TextStyle(
                                 fontSize: 24,
@@ -62,8 +63,8 @@ class _LoginPageState extends State<LoginPage> {
                                 fontFamily: 'BonaNovaSC',
                               ),
                             ),
-                            SizedBox(height: 8),
-                            Text(
+                            const SizedBox(height: 8),
+                            const Text(
                               'Please login to your account',
                               style: TextStyle(
                                 fontSize: 16,
@@ -71,7 +72,7 @@ class _LoginPageState extends State<LoginPage> {
                                 fontFamily: 'BonaNovaSC',
                               ),
                             ),
-                            SizedBox(height: 32),
+                            const SizedBox(height: 32),
                           ],
                         ),
                         TextFormField(
@@ -79,10 +80,10 @@ class _LoginPageState extends State<LoginPage> {
                           keyboardType: TextInputType.emailAddress,
                           decoration: InputDecoration(
                             labelText: 'Email',
-                            labelStyle: TextStyle(
+                            labelStyle: const TextStyle(
                               fontFamily: 'BonaNovaSC',
                             ),
-                            border: OutlineInputBorder(),
+                            border: const OutlineInputBorder(),
                             errorText: _emailError.isEmpty ? null : _emailError,
                           ),
                           validator: (value) {
@@ -102,10 +103,10 @@ class _LoginPageState extends State<LoginPage> {
                           obscureText: _isObscured,
                           decoration: InputDecoration(
                             labelText: 'Password',
-                            labelStyle: TextStyle(
+                            labelStyle: const TextStyle(
                               fontFamily: 'BonaNovaSC',
                             ),
-                            border: OutlineInputBorder(),
+                            border: const OutlineInputBorder(),
                             suffixIcon: IconButton(
                               icon: Icon(
                                 _isObscured
@@ -164,8 +165,8 @@ class _LoginPageState extends State<LoginPage> {
                             }
                           },
                           style: ElevatedButton.styleFrom(
-                            padding: EdgeInsets.symmetric(vertical: 12),
-                            minimumSize: Size(double.infinity, 50),
+                            padding: const EdgeInsets.symmetric(vertical: 12),
+                            minimumSize: const Size(double.infinity, 50),
                           ),
                           child: const Text(
                             'Login',
