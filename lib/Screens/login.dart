@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:login_flutter/Screens/dash.dart';
 import 'package:login_flutter/Screens/forgotpw.dart';
-import 'package:login_flutter/Screens/homepage.dart';
 import 'package:login_flutter/Screens/signup.dart';
 import 'package:lottie/lottie.dart';
 
@@ -14,7 +13,6 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  final FirebaseAuth _auth = FirebaseAuth.instance;
   final _formKey = GlobalKey<FormState>();
   bool _isObscured = true;
   String _emailError = '';

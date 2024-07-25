@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:lottie/lottie.dart';
 import 'package:login_flutter/Screens/login.dart';
 
 class SignupPage extends StatefulWidget {
@@ -25,10 +26,10 @@ class _SignupPageState extends State<SignupPage> {
         title: const Text(
           'Sign Up',
           style: TextStyle(
-            fontFamily: 'BonaNovaSC', // Set the font family here
+            fontFamily: 'BonaNovaSC',
           ),
         ),
-        centerTitle: true, // Center the title
+        centerTitle: true,
       ),
       body: LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
@@ -45,16 +46,16 @@ class _SignupPageState extends State<SignupPage> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        // Logo
                         Column(
-                          children: const [
-                            Icon(
-                              Icons.person_add,
-                              size: 80,
-                              color: Colors.blueAccent,
+                          children: [
+                            Lottie.asset(
+                              'assets/signup.json',
+                              width: 100,
+                              height: 100,
+                              fit: BoxFit.fill,
                             ),
-                            SizedBox(height: 16),
-                            Text(
+                            const SizedBox(height: 16),
+                            const Text(
                               'Create Your Account',
                               style: TextStyle(
                                 fontSize: 24,
@@ -62,8 +63,8 @@ class _SignupPageState extends State<SignupPage> {
                                 fontFamily: 'BonaNovaSC',
                               ),
                             ),
-                            SizedBox(height: 8),
-                            Text(
+                            const SizedBox(height: 8),
+                            const Text(
                               'Join us to access exclusive features',
                               style: TextStyle(
                                 fontSize: 16,
@@ -71,17 +72,15 @@ class _SignupPageState extends State<SignupPage> {
                                 fontFamily: 'BonaNovaSC',
                               ),
                             ),
-                            SizedBox(height: 32),
+                            const SizedBox(height: 32),
                           ],
                         ),
-                        // Full Name field
                         TextFormField(
                           controller: _fullNameController,
                           decoration: InputDecoration(
                             labelText: 'Full Name',
                             labelStyle: TextStyle(
-                              fontFamily:
-                                  'BonaNovaSC', // Set the font family for the label
+                              fontFamily: 'BonaNovaSC',
                             ),
                             border: OutlineInputBorder(),
                           ),
@@ -93,15 +92,13 @@ class _SignupPageState extends State<SignupPage> {
                           },
                         ),
                         const SizedBox(height: 16),
-                        // Email field
                         TextFormField(
                           controller: _emailController,
                           keyboardType: TextInputType.emailAddress,
                           decoration: InputDecoration(
                             labelText: 'Email',
                             labelStyle: TextStyle(
-                              fontFamily:
-                                  'BonaNovaSC', // Set the font family for the label
+                              fontFamily: 'BonaNovaSC',
                             ),
                             border: OutlineInputBorder(),
                           ),
@@ -117,15 +114,13 @@ class _SignupPageState extends State<SignupPage> {
                           },
                         ),
                         const SizedBox(height: 16),
-                        // Password field
                         TextFormField(
                           controller: _passwordController,
                           obscureText: _obscurePassword,
                           decoration: InputDecoration(
                             labelText: 'Password',
                             labelStyle: TextStyle(
-                              fontFamily:
-                                  'BonaNovaSC', // Set the font family for the label
+                              fontFamily: 'BonaNovaSC',
                             ),
                             border: OutlineInputBorder(),
                             suffixIcon: IconButton(
@@ -152,15 +147,13 @@ class _SignupPageState extends State<SignupPage> {
                           },
                         ),
                         const SizedBox(height: 16),
-                        // Retype Password field
                         TextFormField(
                           controller: _retypePasswordController,
                           obscureText: _obscureRetypePassword,
                           decoration: InputDecoration(
                             labelText: 'Retype Password',
                             labelStyle: TextStyle(
-                              fontFamily:
-                                  'BonaNovaSC', // Set the font family for the label
+                              fontFamily: 'BonaNovaSC',
                             ),
                             border: OutlineInputBorder(),
                             suffixIcon: IconButton(
@@ -202,8 +195,7 @@ class _SignupPageState extends State<SignupPage> {
                             'Sign Up',
                             style: TextStyle(
                               fontSize: 18,
-                              fontFamily:
-                                  'BonaNovaSC', // Set the font family for the button text
+                              fontFamily: 'BonaNovaSC',
                             ),
                           ),
                         ),
@@ -235,18 +227,14 @@ class _SignupPageState extends State<SignupPage> {
         password: _passwordController.text.trim(),
       );
 
-      // Show success message
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text('Account created successfully!')),
       );
 
-      // Delay before navigating to the login page
       Future.delayed(Duration(seconds: 2), () {
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(
-              builder: (context) =>
-                  LoginPage()), // Replace with your login page
+          MaterialPageRoute(builder: (context) => LoginPage()),
         );
       });
     } on FirebaseAuthException catch (e) {

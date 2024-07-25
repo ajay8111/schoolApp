@@ -140,7 +140,6 @@ class _ForgotPasswordState extends State<ForgotPassword> {
         SnackBar(content: Text(errorMessage)),
       );
     } catch (e) {
-      // Catch any other exceptions that might occur
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
             content: Text('An unexpected error occurred. Please try again.')),

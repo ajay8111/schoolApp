@@ -42,6 +42,7 @@ dependencies:
   firebase_core: ^3.2.0
   cloud_firestore: ^5.1.0
   lottie: ^1.1.0
+  firebase_analytics: ^11.2.0
 
 dev_dependencies:
   flutter_test:
@@ -71,6 +72,9 @@ flutter:
     - assets/google.png
     - assets/avatar.png
     - assets/login.json
+    - assets/signup.json
+    - assets/admin.png
+    - assets/student.png
     
 
   # An image asset can refer to one or more resolution-specific "variants", see
