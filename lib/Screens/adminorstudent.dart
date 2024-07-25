@@ -14,12 +14,12 @@ class LoginSelectionPage extends StatelessWidget {
           ),
         ),
         centerTitle: true, // Center the title
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back),
-          onPressed: () {
-            Navigator.pop(context); // Handle back navigation
-          },
-        ),
+        // leading: IconButton(
+        //   icon: Icon(Icons.arrow_back),
+        //   onPressed: () {
+        //     Navigator.pop(context); // Handle back navigation
+        //   },
+        // ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -33,7 +33,7 @@ class LoginSelectionPage extends StatelessWidget {
                 'assets/admin.png', // Replace with your admin image path
                 Colors.blueAccent,
                 () {
-                   Navigator.push(
+                  Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => DashboardPage()),
                   );
@@ -46,7 +46,7 @@ class LoginSelectionPage extends StatelessWidget {
                 'assets/student.png', // Replace with your student image path
                 Colors.greenAccent,
                 () {
-                   Navigator.push(
+                  Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => LoginPage()),
                   );

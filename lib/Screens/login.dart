@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:login_flutter/Screens/dash.dart';
 import 'package:login_flutter/Screens/forgotpw.dart';
+import 'package:login_flutter/Screens/homepage.dart';
 import 'package:login_flutter/Screens/signup.dart';
 import 'package:lottie/lottie.dart';
 
@@ -223,7 +223,7 @@ class _LoginPageState extends State<LoginPage> {
       // If login is successful, navigate to the home screen
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => DashboardPage()),
+        MaterialPageRoute(builder: (context) => HomePage()),
       );
     } on FirebaseAuthException catch (e) {
       setState(() {
